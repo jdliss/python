@@ -55,3 +55,18 @@ class LinkedList:
             return currentNode
         else:
             return self.find(data, currentNode.next) if currentNode.next else None
+
+    def find_parent(self, data, currentNode=-1):
+        if currentNode is -1:
+            currentNode = self.head
+
+        if currentNode.next is not None:
+            if currentNode.next.data == data:
+                return currentNode
+            else:
+                return self.find_parent(data, currentNode.next) if currentNode.next else None
+
+    def pop(self):
+        tail = self.tail()
+        self.find_parent(tail.data).next = None
+        return tail
