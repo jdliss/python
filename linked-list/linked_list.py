@@ -47,16 +47,11 @@ class LinkedList:
             currentNode = self.head
         return currentNode if not currentNode.next else self.tail(currentNode.next)
 
-    def 
+    def find(self, data, currentNode=-1):
+        if currentNode is -1:
+            currentNode = self.head
 
-
-ll = LinkedList("head node")
-ll.append("first node")
-ll.append("second node")
-ll.append("third node")
-ll.append("fourth node")
-ll.append("fifth node")
-
-ll.printList()
-print ll.count()
-print ll.tail().data
+        if currentNode.data == data:
+            return currentNode
+        else:
+            return self.find(data, currentNode.next) if currentNode.next else None
