@@ -70,3 +70,16 @@ class LinkedList:
         tail = self.tail()
         self.find_parent(tail.data).next = None
         return tail
+
+    def pop_front(self):
+        head = self.head
+        self.head = self.head.next
+        return head
+
+    def delete(self, data):
+        if self.head.data == data:
+            self.pop_back()
+        else:
+            self.find_parent(data).next = self.find(data).next
+
+
