@@ -78,7 +78,7 @@ class LinkedList:
 
     def delete(self, data):
         if self.head.data == data:
-            self.pop_back()
+            self.pop_front()
         else:
             self.find_parent(data).next = self.find(data).next
 
