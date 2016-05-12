@@ -13,4 +13,3 @@ class BST:
         elif type(params[0]) is str and type(params[1]) is int:
             root = Node(params[0], params[1])
 
-    def insert(name, score):
